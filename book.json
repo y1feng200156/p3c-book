@@ -7,13 +7,14 @@
     "book-summary-scroll-position-saver",
     "github",
     "prism",
+    "autocover",
     "-sharing",
     "-highlight"
   ],
   
   "pluginsConfig": {
     "github": {
-      "url": "https://github.com/alibaba/p3c"
+      "url": "https://github.com/y1feng200156/p3c-book"
     }
   }
 }
