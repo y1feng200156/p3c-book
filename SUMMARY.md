@@ -17,10 +17,10 @@
 * [三、单元测试](单元测试.md)
 * [四、安全规约](安全规约.md)
 * 五、PostgreSQL数据库
-  - [（一）建表规约](PostgreSQL数据库/建表规约.md)
-  - [（二）索引规约](PostgreSQL数据库/索引规约.md)
-  - [（三）SQL语句](PostgreSQL数据库/SQL语句.md)
-  - [（四）ORM映射](PostgreSQL数据库/ORM映射.md)
+  - [（一）建表规约](PostgreSql数据库/建表规约.md)
+  - [（二）索引规约](PostgreSql数据库/索引规约.md)
+  - [（三）SQL语句](PostgreSql数据库/SQL语句.md)
+  - [（四）ORM映射](PostgreSql数据库/ORM映射.md)
 * 六、工程结构
   - [（一）应用分层](工程结构/应用分层.md)
   - [（二）二方库依赖](工程结构/二方库依赖.md)
