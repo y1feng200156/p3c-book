@@ -6,7 +6,7 @@
 3. 【强制】相同参数类型，相同业务含义，才可以使用Java的可变参数，避免使用Object。 
 <br><span style="color:orange">说明</span>：可变参数必须放置在参数列表的最后。（提倡同学们尽量不用可变参数编程） 
 <br><span style="color:green">正例</span>：
-```
+```java
 public User getUsers(String type, Integer... ids) {...} 
 ```
 4. 【强制】外部正在调用或者二方库依赖的接口，不允许修改方法签名，避免对接口调用方产生影响。接口过时必须加`@Deprecated`注解，并清晰地说明采用的新接口或者新服务是什么。 
@@ -33,7 +33,7 @@ public User getUsers(String type, Integer... ids) {...}
 12. 【强制】POJO类必须写toString方法。使用IDE中的工具：source> generate toString时，如果继承了另一个POJO类，注意在前面加一下super.toString。 <br><span style="color:orange">说明</span>：在方法执行抛出异常时，可以直接调用POJO的toString()方法打印其属性值，便于排查问题。 
 13. 【推荐】使用索引访问用String的split方法得到的数组时，需做最后一个分隔符后有无内容的检查，否则会有抛IndexOutOfBoundsException的风险。 
 <br><span style="color:orange">说明</span>：
-```
+```java
 String str = "a,b,c,,";  
 String[] ary = str.split(",");  
 // 预期大于3，结果是3 System.out.println(ary.length);
@@ -43,7 +43,7 @@ String[] ary = str.split(",");
 <br><span style="color:orange">说明</span>：公有方法是类的调用者和维护者最关心的方法，首屏展示最好；保护方法虽然只是子类关心，也可能是“模板设计模式”下的核心方法；而私有方法外部一般不需要特别关心，是一个黑盒实现；因为承载的信息价值较低，所有Service和DAO的getter/setter方法放在类体最后。 
 16. 【推荐】setter方法中，参数名称与类成员变量名称一致，this.成员名 = 参数名。在getter/setter方法中，不要增加业务逻辑，增加排查问题的难度。
 <br><span style="color:red">反例</span>：
-```
+```java
   public Integer getData() {      
       if (condition) {  
         return this.data + 100;  
@@ -54,7 +54,7 @@ String[] ary = str.split(",");
 ```
 17. 【推荐】循环体内，字符串的连接方式，使用StringBuilder的append方法进行扩展。
 <br><span style="color:orange">说明</span>：反编译出的字节码文件显示每次循环都会new出一个StringBuilder对象，然后进行append操作，最后通过toString方法返回String对象，造成内存资源浪费。  <br><span style="color:red">反例</span>：
-```
+```java
   String str = "start";
   for (int i = 0; i < 100; i++) {
       str = str + "hello";      

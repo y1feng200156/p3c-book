@@ -9,10 +9,11 @@
 5. 【强制】iBATIS自带的queryForList(String statementName,int start,int size)不推荐使用。
 <br><span style="color:orange">说明</span>：其实现方式是在数据库取到statementName对应的SQL语句的所有记录，再通过subList取start,size的子集合。 
 <br><span style="color:green">正例</span>：
-        
-        Map<String, Object> map = new HashMap<String, Object>();    
-        map.put("start", start);    
-        map.put("size", size);
+```java        
+Map<String, Object> map = new HashMap<String, Object>();    
+map.put("start", start);    
+map.put("size", size);
+```
 
 6. 【强制】不允许直接拿HashMap与Hashtable作为查询结果集的输出。 
 <br><span style="color:orange">说明</span>：resultClass=”Hashtable”，会置入字段名和属性值，但是值的类型不可控。
