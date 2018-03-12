@@ -3,7 +3,7 @@
 <br><span style="color:orange">说明</span>：1）增加查询分析器解析成本。2）增减字段容易与resultMap配置不一致。 
 2. 【强制】POJO类的布尔属性不能加is，并且数据库字段也不加is_，要求在resultMap中进行字段与属性之间的映射。 
 <br><span style="color:orange">说明</span>：参见定义POJO类以及数据库字段定义规定，在<resultMap>中增加映射，是必须的。在ROM Generator生成的代码中，需要进行对应的修改。
-3. 【强制】不要用resultClass当返回参数，即使所有类属性名与数据库字段一一对应，也需要定义；反过来，每一个表也必然有一个与之对应。 
+3. 【强制】不要用resultClass当返回参数，即使所有类属性名与数据库字段一一对应，也需要定义；反过来，每一个表也必然有一个与之对应。  
 <br><span style="color:orange">说明</span>：配置映射关系，使字段与DO类解耦，方便维护。 
 4. 【强制】sql.xml配置参数使用：#{}，#param# 不要使用${} 此种方式容易出现SQL注入。 
 5. 【强制】iBATIS自带的queryForList(String statementName,int start,int size)不推荐使用。
